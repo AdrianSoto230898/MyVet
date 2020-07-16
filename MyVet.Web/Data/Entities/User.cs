@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 
 namespace MyVet.Web.Data.Entities
@@ -28,5 +29,10 @@ namespace MyVet.Web.Data.Entities
 
         [Display(Name = "Full Name")]
         public string FullNameWithDocument => $"{FirstName} {LastName} - {Document}";
+
+        public static implicit operator string(User v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

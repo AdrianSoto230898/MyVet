@@ -21,6 +21,7 @@ namespace MyVet.Web.Data
 
         public async Task SeedAsync()
         {
+            //var customer = new User();
             await _dataContext.Database.EnsureCreatedAsync();
             await CheckRoles();
             var manager = await CheckUserAsync("1010", "Juan", "Zuluaga", "jzuluaga55@gmail.com", "350 634 2747", "Calle Luna Calle Sol", "Admin");
