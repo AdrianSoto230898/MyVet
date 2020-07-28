@@ -17,9 +17,7 @@ namespace MyVet.Web.Data.Entities
 
         [Display(Name = "Date")]
         [Required(ErrorMessage = "The field {0} is mandatory.")]
-        [DataType(DataType.DateTime)]
         [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
-        [MaxLength(100, ErrorMessage = "The {0} field can not have more than {1} characters.")]
         public DateTime Date { get; set; }
 
         public string Remarks { get; set; }
@@ -29,6 +27,7 @@ namespace MyVet.Web.Data.Entities
         public DateTime DateLocal => Date.ToLocalTime();
 
         public ServiceType ServiceType { get; set; }
+
         public Pet Pet { get; set; }
     }
 }
