@@ -27,9 +27,14 @@
             VerticalOptions="CenterAndExpand">
         </ActivityIndicator>
 
-        <Button Text="Login"
+        <Button 
+                BorderRadius="23" 
+                BackgroundColor="Navy"
+                IsEnabled="{Binding IsEnabled}"
                 Command="{Binding LoginCommand}"
-                IsEnabled="{Binding IsEnabled}">
+                HeightRequest="46"
+                Text="Login"
+                TextColor="White">
         </Button>
         
     </StackLayout>
