@@ -14,7 +14,12 @@ namespace MyVet.Prism.ViewModels
 
         public PetPageViewModel(INavigationService navigationService): base(navigationService)
         {
-            
+        }
+
+        public PetResponse Pet
+        {
+            get => _pet;
+            set => SetProperty(ref _pet, value);
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
@@ -23,8 +28,8 @@ namespace MyVet.Prism.ViewModels
 
             if (parameters.ContainsKey("pet"))
             {
-                _pet = parameters.GetValue<PetResponse>("pet");
-                Title = _pet.Name;
+                Pet = parameters.GetValue<PetResponse>("pet");
+                Title = Pet.Name;
             }
         }
     }
